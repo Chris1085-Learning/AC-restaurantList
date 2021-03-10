@@ -30,7 +30,7 @@ nodemon app.js
 
 ## Screenshot
 
-![restaurantList](https://github.com/chris1085/AC-restaurantList/blob/master/restaurantList.png)
+![restaurantList](https://github.com/chris1085/AC-restaurantList/blob/main/restaurantList.png)
 
 ## Copyright and license
 
