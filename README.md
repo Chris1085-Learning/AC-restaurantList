@@ -32,6 +32,10 @@ nodemon app.js
 
 ![restaurantList](https://github.com/chris1085/AC-restaurantList/blob/main/restaurantList.png)
 
+## Contribute
+
+感謝[Alpha Camp](https://tw.alphacamp.co/)提供此次專案素材及資源。
+
 ## Copyright and license
 
 Copyright (c) DoubleC. All rights reserved.
