@@ -1,6 +1,8 @@
 # Restaurant List
 
-這是一個利用 Express.js、Bootstrap、handlebars 所製作的網站，在這份專案中會學到如何設定路由、製作 handlebars 樣板、發送及接受 handlebars 參數顯示動態資料、handlebars 的迴圈應用等技巧。
+這是一個利用 Express.js、Bootstrap、Handlebars 所製作的網站，在這份專案中會了解到如何設定路由、製作 Handlebars 樣板、發送及接受 Handlebars 參數顯示動態資料、Handlebars 的迴圈應用等技巧。
+
+![restaurantList](https://github.com/chris1085/AC-restaurantList/blob/main/restaurantList.png)
 
 ## Installation
 
@@ -23,19 +25,17 @@ nodemon app.js
 ## Features
 
 - 利用 Bootstrap 製作 RWD 網站樣式
-- 使用 Express.js、handlebars 製作網站及路由設定
-- 把 JSON 資料帶入 handlebars 樣板中動態呈現
+- 使用 Express.js、Handlebars 製作網站及路由設定
+- 把 JSON 資料帶入 Handlebars 樣板中動態呈現
 - 用 Query String 打造搜尋功能
 - 將網頁依照 Layouts 拆成多個部分樣版的 hadlebars 方便維護
 
-## Screenshot
+## Tools
 
-![restaurantList](https://github.com/chris1085/AC-restaurantList/blob/main/restaurantList.png)
+- Express - 應用程式框架
+- Handlebars - web 模板系統
+- Bootstrap - 開源前端框架
 
 ## Contribute
 
-感謝[Alpha Camp](https://tw.alphacamp.co/)提供此次專案素材及資源。
-
-## Copyright and license
-
-Copyright (c) DoubleC. All rights reserved.
+感謝[Alpha Camp](https://tw.alphacamp.co/)提供此次專案素材及資源
