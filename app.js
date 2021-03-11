@@ -30,7 +30,7 @@ app.get('/search', (req, res) => {
   // get user query string and filter restaurantList data
   const keyword = req.query.keyword
   const restaurants = restaurantList.results.filter((restaurant) => {
-    return restaurant.name.toLowerCase().includes(keyword.toLowerCase())
+    return restaurant.name.toLowerCase().includes(keyword.toLowerCase()) || restaurant.category.includes(keyword.toLowerCase())
   })
 
   res.render('index', { restaurants: restaurants, keyword: keyword })
