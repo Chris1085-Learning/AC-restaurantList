@@ -20,7 +20,7 @@ header {
   margin: -5px;
   height: 360px;
   background: #dddddd center center
-    url("https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg");
+    url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
   background-size: cover;
   filter: blur(3px);
 }
@@ -84,9 +84,13 @@ header {
 
 .favorite {
   position: absolute;
-  top: 15px;
-  right: 10px;
+  right: 0px;
   color: white;
+  background-color: transparent;
+  border-color: transparent;
+  border: 0px;
+  width: 40px;
+  height: 40px;
 }
 
 .favorite:hover {
@@ -94,12 +98,19 @@ header {
   text-decoration: none;
 }
 
-.favorite:hover .far,
-.favorite .fas {
+.regular,
+.solid {
+  padding: 5px;
+}
+
+.favorite:hover .regular,
+.favorite .solid {
   display: none;
   color: rgb(255, 80, 80);
+  background-color: rgba(218, 223, 225, 0.5);
+  border-radius: 50%;
 }
-.favorite:hover .fas {
+.favorite:hover .solid {
   display: inline;
 }
 

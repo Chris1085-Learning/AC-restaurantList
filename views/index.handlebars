@@ -8,20 +8,18 @@
       <div class="row row-cols-1 row-cols-md-3">
         {{!-- foreach loop for dynamic data--}}
         {{#each restaurants}}
-        <div class="text-secondary mb-2 px-1 restaurant">
+        <a href="/restaurants/{{this.id}}" class="text-secondary mb-2 px-1 restaurant">
           <div class="card mb-3">
             <div class="cardImage">
               <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
               {{!-- Add favorite switch btn --}}
-              <btn class="favorite" type="button">
+              <button class="favorite" onclick="location.href='/'">
                 <i class="far fa-heart fa-lg regular"></i>
                 <i class="fas fa-heart fa-lg solid"></i>
-              </btn>
-              
-
+              </button>
             </div>
-            
-            <a href="/restaurants/{{this.id}}" class="card-body p-3">
+
+            <div class="card-body p-3">
               <h6 class="card-title mb-1">{{this.name}}</h6>
 
               <div class="restaurant-category mb-1">
@@ -32,9 +30,9 @@
                 {{this.rating}}
                 <i class="fas fa-star fa-xs"></i>
               </span>
-            </a>
+            </div>
           </div>
-        </div>
+        </a>
         {{/each}}
       </div>
     </div>
