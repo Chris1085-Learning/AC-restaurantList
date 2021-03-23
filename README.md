@@ -28,6 +28,9 @@ npm i -g nodemon
 #確認nodemon版本
 nodemon -v
 
+#官網下載並安裝mongoDB後執行
+/mongodb/installation/path/bin/mongod --dbpath /mongodb-data/path
+
 #測試mongodb並新增種子資料
 node models/seeds/restaurantSeeder.js
 
