@@ -30,6 +30,8 @@ const getShowpage = (req, res) => {
 const getSearch = (req, res) => {
   // get user query string and filter restaurantList data
   const keyword = req.query.keyword.toLowerCase()
+  console.log(keyword)
+
   Restaurant.find({
     $or: [
       { name: { $regex: new RegExp('.*' + keyword + '.*', 'i') } },
