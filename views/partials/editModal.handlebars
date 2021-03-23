@@ -1,0 +1,65 @@
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-warning">
+        <h5 class="modal-title" id="editModalLabel">修改餐廳資訊</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="#" method="post" id="deleteForm">
+        <div class="modal-body" id="deleteContent">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="restaurantName">餐廳名稱</label>
+              <input type="text" class="form-control" id="restaurantName" placeholder="餐廳名稱"/>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="restaurantNameEn">餐廳英文名稱</label>
+              <input type="text" class="form-control" id="restaurantNameEn" placeholder="餐廳英文名稱" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="restaurantPhone">餐廳電話</label>
+              <input type="tel" class="form-control" id="restaurantPhone" placeholder="餐廳電話 EX:0287879487" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="restaurantClass">餐廳類別</label>
+              <input
+                type="text"
+                class="form-control"
+                id="restaurantClass"
+                placeholder="餐廳類別，EX: 日本料理、中式餐點"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="restaurantAddress">地址</label>
+            <input type="text" class="form-control" id="restaurantAddress" placeholder="餐廳地址" />
+          </div>
+          <div class="form-group">
+            <label for="restaurantRating">餐廳評價</label>
+            <input type="number" class="form-control" id="restaurantRating" placeholder="餐廳評價 EX:4.2" />
+          </div>
+          <div class="form-group">
+            <label for="restaurantImage">餐廳圖片</label>
+            <input type="text" class="form-control" id="restaurantImage" placeholder="餐廳圖片(網路空間)" />
+          </div>
+          <div class="form-group">
+            <label for="restaurantGoogleMap">餐廳Google Map</label>
+            <input type="text" class="form-control" id="restaurantGoogleMap" placeholder="餐廳google Map" />
+          </div>
+          <div class="form-group">
+            <label for="restaurantDescription">餐廳描述</label>
+            <textarea class="form-control" id="restaurantDescription" rows="3" placeholder="餐廳描述"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+          <button type="submit" class="btn btn-warning">儲存</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

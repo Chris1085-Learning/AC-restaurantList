@@ -17,6 +17,7 @@ app.get('/restaurants/:_id', index.getShowpage)
 app.get('/search', index.getSearch)
 app.post('/', index.editItem)
 app.post('/restaurants/:id/delete', index.deleteItem)
+app.get('/restaurants/jsonInfo/:_id', index.getJsonInfo)
 
 // Listen the server when it started
 app.listen(port, () => {

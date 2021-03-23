@@ -27,6 +27,14 @@ const getShowpage = (req, res) => {
     .catch((err) => console.log(err))
 }
 
+const getJsonInfo = (req, res) => {
+  const id = req.params._id
+  Restaurant.findById(id)
+    .lean()
+    .then((restaurant) => res.json(restaurant))
+    .catch((err) => console.log(err))
+}
+
 const getSearch = (req, res) => {
   // get user query string and filter restaurantList data
   const keyword = req.query.keyword.toLowerCase()
@@ -59,3 +67,4 @@ exports.getSearch = getSearch
 exports.getShowpage = getShowpage
 exports.editItem = editItem
 exports.deleteItem = deleteItem
+exports.getJsonInfo = getJsonInfo
