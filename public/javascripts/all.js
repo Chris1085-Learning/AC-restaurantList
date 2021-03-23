@@ -19,7 +19,7 @@ function addEditEventListener() {
     editInfo[i].addEventListener('click', function () {
       const id = editInfo.closest('.restaurant')[i].children[0].id
 
-      axios.get(`/restaurants/jsonInfo/${id}`).then((res) => {
+      axios.get(`/restaurants/${id}/getJsonInfo`).then((res) => {
         const restaurant = res.data
 
         $('#restaurantName').val(restaurant.name)
@@ -31,6 +31,8 @@ function addEditEventListener() {
         $('#restaurantImage').val(restaurant.image)
         $('#restaurantGoogleMap').val(restaurant.google_map)
         $('#restaurantDescription').val(restaurant.description)
+
+        $('#editForm').attr('action', `./restaurants/${id}/edit`)
       })
     })
   }
