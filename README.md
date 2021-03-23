@@ -1,9 +1,13 @@
 # Restaurant List
 
-這是一個利用 Express.js、Bootstrap、Handlebars 所製作的網站，在這份專案中會了解到如何設定路由、製作 Handlebars 樣板、發送及接受 Handlebars 參數顯示動態資料、Handlebars 的迴圈應用等技巧。
+這是一個利用 Express.js、Bootstrap、Handlebars、mongoDB 所製作的網站，在這份專案中會了解到如何設定路由、製作 Handlebars 樣板、發送及接受 Handlebars 參數顯示動態資料、Handlebars 的迴圈應用等技巧。資料庫部分由mongodb實作CRUD功能。
 
 ![restaurantList](https://github.com/chris1085/AC-restaurantList/blob/main/restaurantList.png)
 
+![CRUD](https://github.com/chris1085/AC-restaurantList/blob/main/CRUD.png)
+
+## Updated
+2021.03.24 新增CRUD功能
 ## Installation
 
 ```bash
@@ -17,9 +21,18 @@ cd AC-restaurantList
 #從package.json中安裝express、express-handlebars套件
 npm install
 
-#確認nodemon版本並測試專案
+#可能需要安裝eslint standard及nodemon
+npm i -D eslint eslint-config-standard
+npm i -g nodemon
+
+#確認nodemon版本
 nodemon -v
-nodemon app.js
+
+#測試mongodb並新增種子資料
+node models/seeds/restaurantSeeder.js
+
+#測試專案
+npm run dev
 ```
 
 ## Features
@@ -29,12 +42,15 @@ nodemon app.js
 - 把 JSON 資料帶入 Handlebars 樣板中動態呈現
 - 用 Query String 打造搜尋功能
 - 將網頁依照 Layouts 拆成多個部分樣版的 hadlebars 方便維護
+- 使用 MongoDB 實作瀏覽、刪除、修改功能
 
 ## Tools
 
 - Express - 應用程式框架
 - Handlebars - web 模板系統
 - Bootstrap - 開源前端框架
+- MongoDB - 資料庫系統
+
 
 ## Contribute
 

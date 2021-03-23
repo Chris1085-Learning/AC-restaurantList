@@ -11,6 +11,7 @@ db.once('open', () => {
   console.log('mongodb connected')
 })
 
+// 瀏覽全部資料
 const getIndex = (req, res) => {
   Restaurant.find()
     .sort({ id: 1 })
@@ -19,6 +20,7 @@ const getIndex = (req, res) => {
     .catch((err) => console.log(err))
 }
 
+// 瀏覽特定資料
 const getShowpage = (req, res) => {
   const id = req.params._id
   Restaurant.findById(id)
@@ -27,6 +29,7 @@ const getShowpage = (req, res) => {
     .catch((err) => console.log(err))
 }
 
+// 回傳特定資料給editModal時給前端使用
 const getJsonInfo = (req, res) => {
   const id = req.params._id
   Restaurant.findById(id)
@@ -35,6 +38,7 @@ const getJsonInfo = (req, res) => {
     .catch((err) => console.log(err))
 }
 
+// 搜尋特定文字，含大小寫
 const getSearch = (req, res) => {
   // get user query string and filter restaurantList data
   const keyword = req.query.keyword.toLowerCase()
@@ -51,6 +55,7 @@ const getSearch = (req, res) => {
     .catch((err) => console.log(err))
 }
 
+// 編輯特地資料
 const editItem = (req, res) => {
   const id = req.params._id
   const formInfo = req.body
@@ -72,6 +77,8 @@ const editItem = (req, res) => {
     .then(() => res.redirect('/'))
     .catch((err) => console.log(err))
 }
+
+// 刪除特定資料
 const deleteItem = (req, res) => {
   const id = req.params.id
 
