@@ -2,17 +2,6 @@ const express = require('express')
 const app = express()
 const port = 3000
 const exphbs = require('express-handlebars')
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/restaurant', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
-
-db.on('error', () => {
-  console.log('mongodb error')
-})
-
-db.once('open', () => {
-  console.log('mongodb connected')
-})
 
 // setting template engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
@@ -24,8 +13,10 @@ app.use(express.static('public'))
 // Routers
 const index = require('./controllers/index')
 app.get('/', index.getIndex)
-app.get('/restaurants/:restaurant_id', index.getShowpage)
+app.get('/restaurants/:_id', index.getShowpage)
 app.get('/search', index.getSearch)
+app.post('/', index.editItem)
+app.post('/restaurants/:id/delete', index.deleteItem)
 
 // Listen the server when it started
 app.listen(port, () => {

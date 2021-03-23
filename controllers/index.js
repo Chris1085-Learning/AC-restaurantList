@@ -1,29 +1,59 @@
-const restaurantList = require('../restaurant.json')
+const Restaurant = require('../models/restaurant')
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/restaurantList', { useNewUrlParser: true, useUnifiedTopology: true })
+const db = mongoose.connection
+
+db.on('error', () => {
+  console.log('mongodb error')
+})
+
+db.once('open', () => {
+  console.log('mongodb connected')
+})
 
 const getIndex = (req, res) => {
-  // paste the restaurant data into 'index' partial template
-  res.render('index', { restaurants: restaurantList.results })
+  Restaurant.find()
+    .sort({ id: 1 })
+    .lean()
+    .then((restaurants) => res.render('index', { restaurants }))
+    .catch((err) => console.log(err))
 }
 
 const getShowpage = (req, res) => {
-  // find the restaurant_id in restaurantList and render 'show' partial template
-  const restaurant = restaurantList.results.find((restaurant) => restaurant.id.toString() === req.params.restaurant_id)
-  res.render('show', { restaurant: restaurant })
+  const id = req.params._id
+  Restaurant.findById(id)
+    .lean()
+    .then((restaurant) => res.render('show', { restaurant }))
+    .catch((err) => console.log(err))
 }
 
 const getSearch = (req, res) => {
   // get user query string and filter restaurantList data
-  const keyword = req.query.keyword
-  const restaurants = restaurantList.results.filter((restaurant) => {
-    return (
-      restaurant.name.toLowerCase().includes(keyword.toLowerCase()) ||
-      restaurant.category.includes(keyword.toLowerCase())
-    )
+  const keyword = req.query.keyword.toLowerCase()
+  Restaurant.find({
+    $or: [
+      { name: { $regex: new RegExp('.*' + keyword + '.*', 'i') } },
+      { category: { $regex: new RegExp('.*' + keyword + '.*', 'i') } }
+    ]
   })
+    .sort({ id: 1 })
+    .lean()
+    .then((restaurants) => res.render('index', { restaurants: restaurants, keyword: keyword }))
+    .catch((err) => console.log(err))
+}
 
-  res.render('index', { restaurants: restaurants, keyword: keyword })
+const editItem = (req, res) => {}
+const deleteItem = (req, res) => {
+  const id = req.params.id
+
+  Restaurant.findById(id)
+    .then((restaurant) => restaurant.remove())
+    .then(() => res.redirect('/'))
+    .catch((err) => console.log(err))
 }
 
 exports.getIndex = getIndex
 exports.getSearch = getSearch
 exports.getShowpage = getShowpage
+exports.editItem = editItem
+exports.deleteItem = deleteItem
