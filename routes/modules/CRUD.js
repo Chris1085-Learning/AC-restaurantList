@@ -3,20 +3,22 @@ const router = express.Router()
 
 const Restaurant = require('../../models/restaurant')
 
-router.get('/search', (req, res) => {
-  // get user query string and filter restaurantList data
-  const keyword = req.query.keyword.toLowerCase()
-
-  Restaurant.find({
-    $or: [
-      { name: { $regex: new RegExp('.*' + keyword + '.*', 'i') } },
-      { category: { $regex: new RegExp('.*' + keyword + '.*', 'i') } }
-    ]
+// Add Data
+router.post('/', (req, res) => {
+  const { name, name_en, category, image, location, phone, google_map, rating, description } = req.body
+  return Restaurant.create({
+    name: name,
+    name_en: name_en,
+    category: category,
+    image: image,
+    location: location,
+    phone: phone,
+    google_map: google_map,
+    rating: rating,
+    description: description
   })
-    .sort({ id: 1 })
-    .lean()
-    .then((restaurants) => res.render('index', { restaurants: restaurants, keyword: keyword }))
-    .catch((err) => console.log(err))
+    .then(res.redirect('/'))
+    .catch((error) => console.log(error))
 })
 
 router.get('/:id', (req, res) => {
@@ -27,6 +29,7 @@ router.get('/:id', (req, res) => {
     .catch((err) => console.log(err))
 })
 
+// Modify Data
 router.put('/:id', (req, res) => {
   const id = req.params.id
   const formInfo = req.body
@@ -49,6 +52,7 @@ router.put('/:id', (req, res) => {
     .catch((err) => console.log(err))
 })
 
+// Delete Data
 router.delete('/:id', (req, res) => {
   const id = req.params.id
 
