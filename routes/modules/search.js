@@ -14,7 +14,7 @@ router.get('/search', (req, res) => {
       { category: { $regex: new RegExp('.*' + keyword + '.*', 'i') } }
     ]
   })
-    .sort({ id: 1 })
+    .sort({ _id: 'asc' })
     .lean()
     .then((restaurants) => res.render('index', { restaurants: restaurants, keyword: keyword }))
     .catch((err) => console.log(err))
