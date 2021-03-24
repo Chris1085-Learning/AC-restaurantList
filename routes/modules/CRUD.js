@@ -5,7 +5,8 @@ const Restaurant = require('../../models/restaurant')
 
 // Add Data
 router.post('/', (req, res) => {
-  const { name, name_en, category, image, location, phone, google_map, rating, description } = req.body
+  let { name, name_en, category, image, location, phone, google_map, rating, description } = req.body
+
   return Restaurant.create({
     name: name,
     name_en: name_en,
