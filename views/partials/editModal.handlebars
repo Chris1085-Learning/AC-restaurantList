@@ -12,17 +12,17 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="restaurantName">餐廳名稱</label>
-              <input type="text" class="form-control" id="restaurantName" placeholder="餐廳名稱" name="name"/>
+              <input type="text" class="form-control" id="restaurantName" placeholder="餐廳名稱" name="name" required/>
             </div>
             <div class="form-group col-md-6">
               <label for="restaurantNameEn">餐廳英文名稱</label>
-              <input type="text" class="form-control" id="restaurantNameEn" placeholder="餐廳英文名稱" name="name_en"/>
+              <input type="text" class="form-control" id="restaurantNameEn" placeholder="餐廳英文名稱" name="name_en" required/>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="restaurantPhone">餐廳電話</label>
-              <input type="tel" class="form-control" id="restaurantPhone" placeholder="餐廳電話 EX:0287879487" name="phone"/>
+              <input type="tel" class="form-control" id="restaurantPhone" placeholder="餐廳電話 EX:0287879487" name="phone" required/>
             </div>
             <div class="form-group col-md-6">
               <label for="restaurantClass">餐廳類別</label>
@@ -32,28 +32,29 @@
                 id="restaurantClass"
                 placeholder="餐廳類別，EX: 日本料理、中式餐點"
                 name="category"
+                required
               />
             </div>
           </div>
           <div class="form-group">
             <label for="restaurantAddress">地址</label>
-            <input type="text" class="form-control" id="restaurantAddress" placeholder="餐廳地址" name="location"/>
+            <input type="text" class="form-control" id="restaurantAddress" placeholder="餐廳地址" name="location" required/>
           </div>
           <div class="form-group">
             <label for="restaurantRating">餐廳評價</label>
-            <input type="number" step="0.01" class="form-control" id="restaurantRating" placeholder="餐廳評價 EX:4.2" name="rating"/>
+            <input type="number" step="0.01" class="form-control" id="restaurantRating" placeholder="餐廳評價 EX:4.2" name="rating" required/>
           </div>
           <div class="form-group">
             <label for="restaurantImage">餐廳圖片</label>
-            <input type="text" class="form-control" id="restaurantImage" placeholder="餐廳圖片(網路空間)" name="image"/>
+            <input type="text" class="form-control" id="restaurantImage" placeholder="餐廳圖片(網路空間)" name="image" required/>
           </div>
           <div class="form-group">
             <label for="restaurantGoogleMap">餐廳Google Map</label>
-            <input type="text" class="form-control" id="restaurantGoogleMap" placeholder="餐廳google Map" name="google_map"/>
+            <input type="text" class="form-control" id="restaurantGoogleMap" placeholder="餐廳google Map" name="google_map" required/>
           </div>
           <div class="form-group">
             <label for="restaurantDescription">餐廳描述</label>
-            <textarea class="form-control" id="restaurantDescription" rows="3" placeholder="餐廳描述" name="description"></textarea>
+            <textarea class="form-control" id="restaurantDescription" rows="3" placeholder="餐廳描述" name="description" required></textarea>
           </div>
         </div>
         <div class="modal-footer">
