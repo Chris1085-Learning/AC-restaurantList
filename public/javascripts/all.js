@@ -10,7 +10,7 @@ function addDeleteEventListener() {
 
       // 更改 modal content並重新將form action link指向新的url
       $('#deleteContent').text('待刪除餐廳：' + restaurantName)
-      $('#deleteForm').attr('action', `./restaurants/${id}/delete`)
+      $('#deleteForm').attr('action', `./restaurants/${id}?_method=DELETE`)
     })
   }
 }
@@ -23,9 +23,8 @@ function addEditEventListener() {
     editInfo[i].addEventListener('click', function () {
       // 尋找id
       const id = editInfo.closest('.restaurant')[i].children[0].id
-
       // 透過api將資料回傳至 editModal增加使用者體驗
-      axios.get(`/restaurants/${id}/getJsonInfo`).then((res) => {
+      axios.get(`/restaurants/${id}/jsonInfo`).then((res) => {
         const restaurant = res.data
 
         $('#restaurantName').val(restaurant.name)
@@ -39,7 +38,7 @@ function addEditEventListener() {
         $('#restaurantDescription').val(restaurant.description)
 
         // 更改 modal content並重新將form action link指向新的url
-        $('#editForm').attr('action', `./restaurants/${id}/edit`)
+        $('#editForm').attr('action', `./restaurants/${id}?_method=PUT`)
       })
     })
   }

@@ -3,6 +3,20 @@ const app = express()
 const port = 3000
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
+const routes = require('./routes')
+
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/restaurantList', { useNewUrlParser: true, useUnifiedTopology: true })
+const db = mongoose.connection
+
+db.on('error', () => {
+  console.log('mongodb error')
+})
+
+db.once('open', () => {
+  console.log('mongodb connected')
+})
 
 // setting template engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
@@ -13,14 +27,10 @@ app.use(express.static('public'))
 
 // Setting bodyParser
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
+
 // Routers
-const index = require('./controllers/index')
-app.get('/', index.getIndex)
-app.get('/restaurants/:_id', index.getShowpage)
-app.get('/search', index.getSearch)
-app.post('/restaurants/:_id/edit', index.editItem)
-app.post('/restaurants/:id/delete', index.deleteItem)
-app.get('/restaurants/:_id/getJsonInfo', index.getJsonInfo)
+app.use(routes)
 
 // Listen the server when it started
 app.listen(port, () => {
