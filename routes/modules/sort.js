@@ -9,7 +9,7 @@ router.get('/sort_by', (req, res) => {
   Restaurant.find()
     .sort({ [type]: [sortMethod] })
     .lean()
-    .then((restaurants) => res.render('index', { restaurants }), curSelection)
+    .then((restaurants) => res.render('index', { restaurants }))
     .catch((err) => console.log(err))
 })
 
