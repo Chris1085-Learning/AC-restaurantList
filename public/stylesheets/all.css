@@ -40,6 +40,16 @@ header {
   color: #9b4b4b;
 }
 
+.custom-select {
+  width: 15% !important;
+}
+
+select,
+option {
+  text-align-last: center;
+  text-align: center;
+}
+
 .form-control::placeholder {
   color: #aaaaaa;
   font-size: 0.8rem;
@@ -231,6 +241,10 @@ header {
   .provision-list-item {
     padding-left: 24px;
   }
+
+  .custom-select {
+    width: 50% !important;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -264,5 +278,9 @@ header {
   .restaurant {
     padding-left: 16px !important;
     padding-right: 16px !important;
+  }
+
+  .custom-select {
+    width: 100% !important;
   }
 }
