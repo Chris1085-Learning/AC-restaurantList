@@ -22,6 +22,7 @@ router.post('/', (req, res) => {
     .catch((error) => console.log(error))
 })
 
+// Show ID Data
 router.get('/:id', (req, res) => {
   const id = req.params.id
   Restaurant.findById(id)

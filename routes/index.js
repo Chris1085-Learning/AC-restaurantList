@@ -10,6 +10,7 @@ router.use('/', home)
 router.use('/restaurants', search)
 router.use('/restaurants', sort)
 router.use('/restaurants', crud)
+// Get database jsonInfo and show on modal
 router.use('/restaurants', jsonInfo)
 
 module.exports = router

@@ -1,7 +1,8 @@
 <div class="dropdown mb-3 text-right">
-  <form action="/restaurants/sort_by" method="GET" id="sortForm">
-    <select class="custom-select" id="sortSelect" onchange="this.form.submit();" name="sortInfo">
-      <option selected value="_id-asc">排序方式</option>
+  <form action="/restaurants/sort" method="GET" id="sortForm">
+    <select class="custom-select" id="sortSelect" onchange="this.form.submit();" name="method">
+      <option selected disabled>{{sortName}}</option>
+      <option value="_id-asc">預設排序</option>
       <option value="name-asc">名稱 A->Z</option>
       <option value="name-desc">名稱 Z->A</option>
       <option value="category-asc">類別 A->Z</option>
