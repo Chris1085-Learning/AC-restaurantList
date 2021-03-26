@@ -8,6 +8,7 @@
 
 ## Updated
 2021.03.24 新增CRUD功能
+2021.03.06 新增排序功能
 ## Installation
 
 ```bash
@@ -25,16 +26,11 @@ npm install
 npm i -D eslint eslint-config-standard
 npm i -g nodemon
 
-#確認nodemon版本
-nodemon -v
-
 #官網下載並安裝mongoDB後執行
 /mongodb/installation/path/bin/mongod --dbpath /mongodb-data/path
 
-#新增MongoDB collection "restaurantList"
-
-#測試mongodb並新增種子資料
-node models/seeds/restaurantSeeder.js
+#新增MongoDB collection "restaurantList" 並新增種子資料
+npm run seeds
 
 #測試專案
 npm run dev
@@ -47,14 +43,14 @@ npm run dev
 - 把 JSON 資料帶入 Handlebars 樣板中動態呈現
 - 用 Query String 打造搜尋功能
 - 將網頁依照 Layouts 拆成多個部分樣版的 hadlebars 方便維護
-- 使用 MongoDB 實作瀏覽、刪除、修改功能
+- 使用 MongoDB 實作新增、瀏覽、刪除、修改、排序功能
 
 ## Tools
 
-- Express - 應用程式框架
-- Handlebars - web 模板系統
-- Bootstrap - 開源前端框架
-- MongoDB - 資料庫系統
+- Express - 應用程式框架執行後端環境
+- Handlebars - Web 模板系統搭建前端介面
+- Bootstrap - 開源前端框架美化前端介面
+- MongoDB - 資料庫系統製作CRUD及排序功能
 
 
 ## Contribute
