@@ -7,8 +7,9 @@
 ![CRUD](https://github.com/chris1085/AC-restaurantList/blob/main/CRUD.png)
 
 ## Updated
-2021.03.24 新增CRUD功能
-2021.03.06 新增排序功能
+- 2021.03.11 建立餐廳清單(Get and search function)
+- 2021.03.24 加入MongoDB，新增CRUD功能
+- 2021.03.26 重構網站並新增排序功能
 ## Installation
 
 ```bash
@@ -40,10 +41,12 @@ npm run dev
 
 - 利用 Bootstrap 製作 RWD 網站樣式
 - 使用 Express.js、Handlebars 製作網站及路由設定
-- 把 JSON 資料帶入 Handlebars 樣板中動態呈現
 - 用 Query String 打造搜尋功能
 - 將網頁依照 Layouts 拆成多個部分樣版的 hadlebars 方便維護
 - 使用 MongoDB 實作新增、瀏覽、刪除、修改、排序功能
+- 將 Routes 拆成多個 modules 方便維護
+- 使用 "body-parser" NPM package 接收 request 內容
+- 使用 "method-override" NPM package 將 Form 的方法新增PUT、DELETE、PATCH
 
 ## Tools
 
