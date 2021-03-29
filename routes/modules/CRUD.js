@@ -5,19 +5,7 @@ const Restaurant = require('../../models/restaurant')
 
 // Add Data
 router.post('/', (req, res) => {
-  let { name, name_en, category, image, location, phone, google_map, rating, description } = req.body
-
-  return Restaurant.create({
-    name: name,
-    name_en: name_en,
-    category: category,
-    image: image,
-    location: location,
-    phone: phone,
-    google_map: google_map,
-    rating: rating,
-    description: description
-  })
+  return Restaurant.create(req.body)
     .then(res.redirect('/'))
     .catch((error) => console.log(error))
 })
